@@ -1,0 +1,20 @@
+  <h2>Oeuvres</h2>
+{% assign artistPath = page.permalink: replace '/' %}
+  {% for o in page.works %}
+    <div class="row workrow">
+      <div class="col-md-8 work">
+        {% for p in o.pictures %}
+          <img class="img-responsive" src="{{site.baseurl}}/img{{artistPath}}{{ p }}" alt="{{ p.title }} par {{ page.title }}">
+        {% endfor %}
+      </div>
+      <div class="col-md-4">
+        <h3>{{ o.title }}</h3>
+        <p>
+          {% if o.date %}{{ o.date }} - {% endif %}
+          {% if o.size %}{{ o.size }} - {% endif %}
+          {% if o.description %}{{ o.description }} - {% endif %}
+          {% if o.price %}{{ o.price }}{% endif %}
+        </p>
+      </div>
+    </div>
+  {% endfor %}

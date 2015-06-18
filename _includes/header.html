@@ -1,0 +1,16 @@
+{% assign sorted_artist = site.artists | sort: "weight" %}
+
+<ul class="nav nav-pills">
+    <li role="presentation"><a class="page-link" href="http://cube.fr">&lt;&lt;&nbsp;Retourner sur le site Cube.fr</a></li>
+
+    <li role="presentation">
+        <a class="page-link" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </li>
+
+
+{% for p in sorted_artist %}{% if p.title %}
+    <li role="presentation" {% if p.url == page.url %} class="active"{% endif %}>
+        <a class="page-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+    </li>
+{% endif %}{% endfor %}
+</ul>

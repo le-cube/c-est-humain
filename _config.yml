@@ -1,0 +1,38 @@
+# Site settings
+title: C'est humain
+description: "Trois artistes lorrains réunis pour exposer ensemble sous le thème de \"l'Humain\" : Erik Bonnet, Cizek, Jean Jacques Piezanowski."
+
+baseurl: /c-est-humain
+url: http://cube.fr
+
+# Build settings
+markdown: kramdown
+
+sass:
+  # loading path from site root
+  # default to _sass
+  sass_dir: bower_components/bootstrap-sass/assets/stylesheets
+
+  # style : nested (default), compact, compressed, expanded
+  #         :nested, :compact, :compressed, :expanded also works
+  # see http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  # on a typical twitter bootstrap stats are :
+  # nested 138,7kB, compact 129,1kB, expanded 135,9 kB, compressed 122,4 kB
+  style: compressed
+
+collections:
+  artists:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+  - scope:
+      path: ""
+      type: artists
+    values:
+      layout: "artist"

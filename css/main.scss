@@ -1,0 +1,75 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+$brand-primary: #cd7c7b;
+
+
+
+$font-size-base: 16px !default;
+$nav-pills-border-radius: 0;
+
+$alert-border-radius: 0px;
+$state-success-text:             white !default;
+$state-success-bg:               #cd7c7b !default;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+
+$font-family-cursive: 'Dancing Script', cursive;
+
+@import "bootstrap";
+
+body{
+    background: lighten( $brand-primary, 30% );
+}
+
+.homeHero{
+    background: $brand-primary;
+    color: white;
+
+    .container{
+
+    }
+}
+
+.title{
+    font-family: $font-family-cursive;
+}
+
+h1.title{
+    font-size: 5em;
+}
+
+h2.title{
+    font-size: 3em;
+}
+
+h3.title{
+    font-size: 2em;
+}
+
+.home{
+    background: white;
+}
+
+.home .artist{
+    text-align: center;
+}
+
+.artist{
+    background: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.workrow{
+    margin-bottom: 30px;
+}
+
+.alert a{
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
